@@ -12,7 +12,7 @@ import ReccomendationsPage from './Components/Reccomendations';
 
 function App() {
   const domain = "dev-hb5qwoe81p5lw45x.us.auth0.com";
-  const clientId = "F6bgV4NLyNNgVvdjDDMjMOG6GXj2J3o2";
+  const clientId = "TmvlrF6EbMP4f0ozk5X0FnQQSqwA88Tm";
 
   return (
     <Auth0Provider
