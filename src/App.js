@@ -9,6 +9,9 @@ import ExplorePage from './Components/ExplorePage';
 import CreatePage from './Components/CreatePage';
 import SharePage from './Components/SharePage';
 import ReccomendationsPage from './Components/Reccomendations';
+import RecipeCard from './Components/RecipeCard';
+import RecipeGuac from './Components/RecipeGuac';
+import RecipeBowl from './Components/RecipeBowl';
 
 function App() {
   const domain = "dev-hb5qwoe81p5lw45x.us.auth0.com";
@@ -30,6 +33,9 @@ function App() {
             <Route path="/create" element={<CreatePage />} />
             <Route path="/reccomendations" element={<ReccomendationsPage />} />
             <Route path="/share" element={<SharePage/>} />
+            <Route path="/recipe/tzatziki" element={<RecipeCard/>} />
+            <Route path="/recipe/guacamole" element={<RecipeGuac/>} />
+            <Route path="/recipe/bowl" element={<RecipeBowl/>} />
             <Route path="/" element={<HomePage />} />
           </Routes>
         </div>

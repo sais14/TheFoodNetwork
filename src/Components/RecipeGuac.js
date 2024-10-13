@@ -1,32 +1,34 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import the hook for navigation
 import './RecipeCard.css'; // Custom CSS for styling the card
-import Tzatziki from '../images/ExploreImages/Tzatziki.webp';
+import Guacamole from '../images/ExploreImages/Guacamole.jpg';
 
-const RecipeCard = () => {
+const RecipeGuac = () => {
   const navigate = useNavigate(); // Initialize navigate hook
 
   const recipe = {
-    name: 'Tzatziki',
+    name: 'Guacamole',
     image: 'https://via.placeholder.com/400x300?text=Tzatziki', // Placeholder image
     ingredients: [
-      '1 cup Greek yogurt',
-      '1 cucumber, grated and squeezed',
-      '2 cloves garlic, minced',
-      '1 tablespoon olive oil',
-      '1 tablespoon lemon juice',
-      '1 tablespoon fresh dill, chopped',
-      'Salt and pepper to taste',
+        "3 avocados",
+      "1 lime, juiced",
+      "1/2 teaspoon salt",
+      "1/4 cup red onion, finely chopped",
+      "2 tablespoons cilantro, chopped",
+      "1 jalapeño, seeded and minced",
+      "1 small tomato, diced",
+      "1 garlic clove, minced"
     ],
     steps: [
-      '1. Grate the cucumber and squeeze out excess water using a clean kitchen towel or paper towels.',
-      '2. In a bowl, mix the Greek yogurt, grated cucumber, minced garlic, olive oil, lemon juice, and fresh dill.',
-      '3. Season with salt and pepper to taste, and stir everything together until well combined.',
-      '4. Chill in the refrigerator for 30 minutes to let the flavors meld together.',
-      '5. Serve cold as a dip with pita bread or alongside grilled meats.',
+      "1. Cut the avocados in half, remove the pit, and scoop out the flesh into a mixing bowl.",
+    "2. Mash the avocados with a fork or potato masher until smooth or slightly chunky, depending on preference.",
+    "3. Add lime juice and salt. Stir to combine.",
+    "4. Mix in the finely chopped red onion, cilantro, jalapeño, diced tomato, and minced garlic.",
+    "5. Taste and adjust seasoning with more salt or lime juice if needed.",
+    "6. Serve immediately with tortilla chips or cover with plastic wrap and refrigerate."
     ],
     culturalFact:
-      'Tzatziki is a traditional Greek sauce made from strained yogurt, cucumber, garlic, and olive oil. It is commonly used as a refreshing dip or sauce for various Greek dishes like souvlaki or gyros, and has been a staple in Mediterranean cuisine for centuries.',
+      'Guacamole originated in Mexico and its name comes from the Nahuatl word "āhuacamolli," which means "avocado sauce," reflecting its deep roots in Aztec culture.',
   };
 
   const handleMadeItClick = () => {
@@ -37,7 +39,7 @@ const RecipeCard = () => {
     <div className="recipe-card">
       {/* Image on the left */}
       <div className="recipe-image">
-        <img src={Tzatziki} alt={recipe.name} />
+        <img src={Guacamole} alt={recipe.name} />
       </div>
 
       {/* Recipe info on the right */}
@@ -79,4 +81,4 @@ const RecipeCard = () => {
   );
 };
 
-export default RecipeCard;
+export default RecipeGuac;

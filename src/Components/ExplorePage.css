@@ -1,37 +1,59 @@
-/* Title styling */
+/* Page container styling similar to the Create page */
+.explore-page {
+  display: flex;
+  flex-direction: column;
+  background-color: white !important;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d9c0d9 0%, #cce3e6 100%);
+  padding: 20px;
+}
+
 .explore-title {
   text-align: center;
-  margin-bottom: 40px; /* More space between title and images */
-  font-family: 'Lato', sans-serif; /* Professional font */
+  margin-bottom: 40px; 
+  font-family: 'Lato', sans-serif;
   color: #333;
 }
 
-/* Grid layout for the image gallery */
+/* Grid container styling similar to the white card on the create page */
+.image-gallery-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  max-width: 1200px;
+  width: 100%;
+}
+
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Space between the tiles */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px; 
   justify-items: center;
 }
 
 /* Image tile styling */
 .image-tile {
   position: relative;
-  width: 100%; /* Ensures tile takes up full width of the grid */
+  width: 100%;
   max-width: 250px;
   transition: transform 0.3s ease;
+  border-radius: 15px; /* Rounded corners */
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .image-tile:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .image-tile img {
   width: 100%;
-  height: 250px; /* Ensures a uniform height */
-  object-fit: cover; /* Makes sure the images fit within the box */
+  height: 250px;
+  object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Sparkle emoji positioning with a white circle around it */
@@ -48,7 +70,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  transition: transform 0.3s ease;
 }
 
 /* Image name styling */
@@ -57,7 +79,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   font-size: 1rem;
   text-align: center;
@@ -75,17 +97,17 @@
 .image-sparkle .create-text {
   position: absolute;
   top: 50%;
-  left: -80px; /* Position it to the left of the sparkle */
-  transform: translateY(-50%); /* Center it vertically */
-  background-color: rgba(0, 0, 0, 0.6); /* Translucent white background */
+  left: -80px;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 16px;
   color: white;
   font-weight: bold;
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.3s ease; /* Fade in effect */
-  pointer-events: none; /* Ensure it doesn't interfere with clicking the sparkle */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
 .image-sparkle:hover .create-text {
