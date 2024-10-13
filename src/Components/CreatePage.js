@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './CreatePage.css'; // Import the new styles
 import BackHomeLink from './BackHomeLink';
 
@@ -9,6 +10,8 @@ function CreatePage() {
   const [isUploading, setIsUploading] = useState(false);
   const [isGenerating, setIsGenerating] = useState(false);
   const [showGenerateButton, setShowGenerateButton] = useState(false);
+
+  const navigate = useNavigate(); // Initialize the navigate hook
 
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
@@ -71,6 +74,11 @@ function CreatePage() {
     }
   };
 
+  // Function to handle navigation to recommendations page
+  const handleRecommendationsClick = () => {
+    navigate('/reccomendations'); // Navigate to /recommendations
+  };
+
   return (
     <div className="create-page">
       <BackHomeLink />
@@ -78,7 +86,9 @@ function CreatePage() {
         <h2>Create a New Recipe</h2>
         <div className="kitchen-section">
           <h3>What's in your kitchen?</h3>
-          <p>Upload a picture of your kitchen or a receipt to help generate recipes based on your ingredients.</p>
+          <p3 style={{ color: 'black' }}>
+            Upload a picture of your kitchen or a receipt to help generate recipes based on your ingredients.
+          </p3>
           <div className="image-buttons">
             <input
               type="file"
@@ -91,8 +101,8 @@ function CreatePage() {
               Upload from Device
             </label>
           </div>
-          {isUploading && <p>Uploading and extracting ingredients...</p>}
-          {uploadMessage && <p>{uploadMessage}</p>}
+          {isUploading && <p3 style={{ color: 'black' }}>Uploading and extracting ingredients...</p3>}
+          {uploadMessage && <p3 style={{ color: 'black' }}>{uploadMessage}</p3>}
           {ingredients.length > 0 && (
             <div>
               <h3>Extracted Ingredients:</h3>
@@ -105,18 +115,12 @@ function CreatePage() {
           )}
           {showGenerateButton && !isGenerating && (
             <div className="generate-button-container">
-              <button onClick={handleGenerateRecipe} className="image-button">
-                Generate Recipe
+              <button onClick={handleRecommendationsClick} className="image-button">
+                Generate Recommendations
               </button>
             </div>
           )}
-          {isGenerating && <p>Generating recipe, please wait...</p>}
-          {recipe && (
-            <div>
-              <h3>Generated Recipe:</h3>
-              <pre>{recipe}</pre>
-            </div>
-          )}
+
         </div>
       </div>
     </div>

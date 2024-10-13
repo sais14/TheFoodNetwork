@@ -80,7 +80,7 @@ function ReccomendationsPage() {
   return (
     <div className="carousel-page">
       <BackHomeLink />
-      <h1>Recommended for You</h1> {/* Main Hero Title */}
+      <h7 style={{ color: 'black' }}>Recommended for You</h7> {/* Main Hero Title */}
 
       <div className="carousel-section">
         <h2>Based on your profile . . .</h2>

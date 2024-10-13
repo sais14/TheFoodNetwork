@@ -8,6 +8,12 @@ function SharePage() {
   const [ingredients, setIngredients] = useState('');  // State to store comma-separated ingredients
   const [recentPosts, setRecentPosts] = useState([]);  // State to store recent posts
 
+  // Function to get today's date in a readable format
+  const getCurrentDate = () => {
+    const today = new Date();
+    return today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  };
+
   // Function to handle image capture (use device camera)
   const handleCaptureImage = () => {
     const input = document.createElement('input');
@@ -47,8 +53,16 @@ function SharePage() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (image && name && ingredients) {
-      // Add the image, name, and ingredients to recent posts
-      setRecentPosts([{ image, name, ingredients }, ...recentPosts]);
+      const newPost = {
+        image,
+        name,
+        ingredients,
+        datePosted: getCurrentDate()  // Store the current date when the post is submitted
+      };
+      
+      // Add the new post to recent posts
+      setRecentPosts([newPost, ...recentPosts]);
+      
       // Reset the form
       setImage(null);
       setName('');
@@ -61,8 +75,8 @@ function SharePage() {
   return (
     <div className="share-container">
       <BackHomeLink />
-      <h1>Share Your Recipes</h1>
-      <p>Capture or upload an image to share with others.</p>
+      <h4>Share Your Recipes</h4>
+      <p7>Capture or upload an image to share with others.</p7>
 
       {/* Image Upload/Capture Buttons */}
       <div className="button-container">
@@ -107,7 +121,7 @@ function SharePage() {
       <div className="recent-posts">
         <h2>Your Recent Posts</h2>
         {recentPosts.length === 0 ? (
-          <p>No posts yet.</p>
+          <p3>No posts yet.</p3>
         ) : (
           <ul>
             {recentPosts.map((post, index) => (
@@ -116,7 +130,9 @@ function SharePage() {
                   <div className="post-content">
                     <h3>{post.name}</h3>
                     <img src={post.image} alt="Post" className="recent-post-image" />
-                    <p>Ingredients: {post.ingredients}</p>
+                    <p4>Ingredients: {post.ingredients}</p4>
+                    <br />
+                    <p4>Date Posted: {post.datePosted}</p4>  {/* Display the date posted */}
                   </div>
                 </div>
               </li>

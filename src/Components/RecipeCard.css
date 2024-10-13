@@ -15,6 +15,10 @@
   transform: scale(1.02);
 }
 
+p3 {
+  color: black;
+}
+
 /* Styling for the image on the left side */
 .recipe-image {
   max-width: 300px;
@@ -91,7 +95,7 @@
 .cultural-fact p {
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
-  color: #666;
+  color: #444 !important;
 }
 
 /* Styling for the Made It button */

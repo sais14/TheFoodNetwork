@@ -110,6 +110,10 @@ p {
   text-align: center;
 }
 
+p3 {
+  color: black;
+}
+
 /* Ensure scrolling is available for smaller screens */
 @media (max-width: 600px) {
   .create-page {
@@ -137,4 +141,34 @@ p {
   pre {
     font-size: 0.9rem;
   }
+}
+
+/* Container for the "Recommendations" button */
+.recommendations-button-container {
+  margin-top: 40px; /* Space above the button */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for the "Recommendations" button */
+.recommendations-button {
+  background-color: #6a00f4;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-button:hover {
+  background-color: #5400c4; /* Darker color on hover */
+}
+
+.recommendations-button:active {
+  background-color: #4300a0; /* Darker color when clicked */
 }

@@ -67,7 +67,7 @@ const RecipeCard = () => {
         {/* Fun Cultural Fact */}
         <div className="recipe-section cultural-fact">
           <h3>Fun Cultural Fact</h3>
-          <p>{recipe.culturalFact}</p>
+          <p >{recipe.culturalFact}</p>
         </div>
 
         {/* Made It Button */}
