@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
+import { useNavigate } from 'react-router-dom';
 import './style.css'; 
 import cuisineIcon from './cuisine.jpg';
 import dietIcon from './dietary.webp';
@@ -10,6 +11,7 @@ function PreferencesPage() {
   const [diet, setDiet] = useState([]);
   const [allergies, setAllergies] = useState([]);
   const [cuisines, setCuisines] = useState([]);
+  const navigate = useNavigate(); // For navigation
 
   const allergens = ['Peanuts', 'Shellfish', 'Eggs', 'Milk', 'Mustard'];
   const diets = ['Vegetarian', 'Vegan', 'Pescatarian', 'No Pork', 'No Beef'];
@@ -18,6 +20,8 @@ function PreferencesPage() {
   const handlePreferencesSave = (e) => {
     e.preventDefault();
     console.log('Saved preferences:', diet, allergies, cuisines);
+    // Navigate to home page after saving preferences
+    navigate('/');
   };
 
   const handleAllergiesChange = (selectedOptions) => {
@@ -83,3 +87,4 @@ function PreferencesPage() {
 }
 
 export default PreferencesPage;
+

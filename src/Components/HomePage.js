@@ -1,4 +1,3 @@
-// HomePage.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
@@ -13,6 +12,8 @@ function HomePage() {
         <Link to="/create" className="home-button">Create</Link>
         <Link to="/preferences" className="home-button">User Preferences</Link>
       </div>
+ 
+      <Link to="/login" className="login-button">Login</Link>
     </div>
   );
 }
