@@ -1,20 +1,70 @@
-/* ExplorePage.css */
-.explore-page {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  .explore-page h2 {
-    margin: 20px 0;
-    font-size: 2.5rem;
-    color: #333;
-  }
-  
-  .explore-page p {
-    font-size: 1.2rem;
-    color: #555;
-    margin: 10px 0;
-    line-height: 1.5;
-  }
-  
+/* CSS for ExplorePage */
+
+/* Ensure the title is centered and has space below it */
+.explore-title {
+  text-align: center;
+  margin-bottom: 20px; /* Space between title and images */
+}
+
+/* Ensure the images appear in a grid layout */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Image tile styling */
+.image-tile {
+  position: relative;
+  width: 250px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.image-tile:hover {
+  transform: scale(1.05);
+}
+
+.image-tile img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sparkle emoji positioning */
+/* Sparkle emoji positioning with a white circle around it */
+.image-sparkle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: white; /* White background for the circle */
+  border-radius: 50%; /* Makes the container a circle */
+  padding: 5px; /* Padding to make the circle larger than the emoji */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow for a 3D effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Image name styling */
+.image-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-tile:hover .image-name {
+  opacity: 1;
+}
