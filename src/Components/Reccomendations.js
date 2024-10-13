@@ -1,5 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useNavigate } from "react-router-dom";
 
 import React from "react";
 import Slider from "react-slick";
@@ -17,8 +18,19 @@ import image7 from '../images/image7.png';
 import image8 from '../images/image8.png';
 import image9 from '../images/image9.png';
 import image10 from '../images/image10.png';
+import image15 from '../images/image15.png';
+import image16 from '../images/image16.png';
+import image18 from '../images/image18.png';
+import image19 from '../images/image19.png';
+import image20 from '../images/image20.png';
+
 
 function ReccomendationsPage() {
+  const navigate = useNavigate(); 
+
+  const handleImageClick = () => {
+    navigate('/recipe/bowl'); // Navigate to the provided link if it exists
+  };
   const settings = {
     dots: true,
     infinite: true,
@@ -42,22 +54,27 @@ function ReccomendationsPage() {
   };
 
   const imagesCarousel1 = [
-    { src: image1, altText: 'Blueberry Salad' },
-    { src: image2, altText: 'Pasta with Vegetables' },
-    { src: image3, altText: 'Vegetable Soup' },
-    { src: image4, altText: 'Fruit Salad' }
+    { src: image1, altText: 'Indian Style Egg Curry' },
+    { src: image2, altText: 'Italian Style Vegetable Stir Fry' },
+    { src: image3, altText: 'Blueberry and Apple Salad with Lemon Dressing' },
+    { src: image4, altText: 'Roasted Vegetable and Mushroom Risotto' },
+    { src: image5, altText: 'Asparagus and Red Bell Pepper Fritatta' },
   ];
 
   const imagesCarousel2 = [
-    { src: image5, altText: 'Grilled Vegetables' },
-    { src: image6, altText: 'Berry Smoothie' },
-    { src: image7, altText: 'Vegetable Stir Fry' }
+    { src: image6, altText: 'Vegan Quinoa Bowl with Roasted Vegetables' },
+    { src: image7, altText: 'Gluten Free Avocado and Blackberry Smoothie' },
+    { src: image8, altText: 'Grilled Vegetable Skewers with Hummus Dip' },
+    { src: image9, altText: 'Spicy Asparagus Mushroom Stir Fry' },
+    { src: image10, altText: 'Carrot Celery Salad with Lemon Juice Dressing' }
   ];
 
   const imagesCarousel3 = [
-    { src: image8, altText: 'Avocado Toast' },
-    { src: image9, altText: 'Roasted Vegetables' },
-    { src: image10, altText: 'Berry Bowl' }
+    { src: image16, altText: 'Grilled Shrimp Tacos' },
+    { src: image18, altText: 'Chicken Stir Fry with Coconut Milk' },
+    { src: image19, altText: 'Tofu Broccoli Stir Fry' },
+    { src: image20, altText: 'Feta and Chicken Salad' },
+    { src: image15, altText: 'Ham and Cheddar Cheese Omelette' },
   ];
 
   return (
@@ -85,7 +102,7 @@ function ReccomendationsPage() {
         <h2>Others with similar interests are making . . .</h2>
         <Slider {...settings}>
           {imagesCarousel2.map((image, index) => (
-            <div key={index} className="carousel-item">
+            <div key={index} className="carousel-item" onClick={() => handleImageClick(image.link)}>
               <div className="image-container">
                 <img src={image.src} alt={image.altText} />
                 <div className="image-overlay">

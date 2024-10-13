@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './SharePage.css';  // Custom CSS file for enhanced styling
+import BackHomeLink from './BackHomeLink';
 
 function SharePage() {
   const [image, setImage] = useState(null);  // State to store the uploaded image
@@ -59,6 +60,7 @@ function SharePage() {
 
   return (
     <div className="share-container">
+      <BackHomeLink />
       <h1>Share Your Recipes</h1>
       <p>Capture or upload an image to share with others.</p>
 
