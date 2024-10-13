@@ -1,7 +1,15 @@
+/* Title styling */
+.explore-title {
+  text-align: center;
+  margin-bottom: 40px; /* More space between title and images */
+  font-family: 'Lato', sans-serif; /* Professional font */
+  color: #333;
+}
+
 /* Grid layout for the image gallery */
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
   gap: 20px; /* Space between the tiles */
   justify-items: center;
 }
@@ -9,20 +17,19 @@
 /* Image tile styling */
 .image-tile {
   position: relative;
-  width: 100%;
+  width: 100%; /* Ensures tile takes up full width of the grid */
+  max-width: 250px;
   transition: transform 0.3s ease;
-  border-radius: 10px;
-  overflow: hidden;
 }
 
 .image-tile:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  transform: scale(1.05);
 }
 
 .image-tile img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 250px; /* Ensures a uniform height */
+  object-fit: cover; /* Makes sure the images fit within the box */
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -63,22 +70,6 @@
 
 .image-tile:hover .image-name {
   opacity: 1;
-}
-
-/* Tetris-style grid layout with varying image sizes */
-.image-tile.wide {
-  grid-column: span 2; /* Takes up two columns */
-  grid-row: span 1;
-}
-
-.image-tile.tall {
-  grid-column: span 1;
-  grid-row: span 2; /* Takes up two rows */
-}
-
-.image-tile.large {
-  grid-column: span 2;
-  grid-row: span 2; /* Takes up two columns and two rows */
 }
 
 .image-sparkle .create-text {
