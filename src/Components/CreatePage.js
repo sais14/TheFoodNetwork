@@ -1,52 +1,49 @@
-// CreatePage.js
 import React, { useState } from 'react';
+import './CreatePage.css';
 
 function CreatePage() {
-  const [recipeTitle, setRecipeTitle] = useState('');
-  const [ingredients, setIngredients] = useState('');
-  const [instructions, setInstructions] = useState('');
+  const handleTakeImage = () => {
+    console.log('Camera opened to take image');
+  };
 
-  const handleRecipeCreation = (e) => {
-    e.preventDefault();
-    // Add logic to create a recipe here
-    console.log('Recipe created:', recipeTitle, ingredients, instructions);
+  const handleImageUpload = (e) => {
+   
+    const file = e.target.files[0];
+    if (file) {
+      console.log('Image uploaded:', file.name);
+    }
   };
 
   return (
     <div className="create-page">
       <h2>Create a New Recipe</h2>
-      <form onSubmit={handleRecipeCreation}>
-        <div>
-          <label>Recipe Title</label>
-          <input 
-            type="text" 
-            value={recipeTitle} 
-            onChange={(e) => setRecipeTitle(e.target.value)} 
-            required 
+
+      <div className="kitchen-section">
+        <h3>What's in your kitchen?</h3>
+        <p>Upload a picture of your kitchen or a receipt to help generate recipes based on your ingredients.</p>
+
+        <div className="image-buttons">
+          {/* Button to take image using camera */}
+          <button type="button" className="image-button" onClick={handleTakeImage}>
+            Take Image
+          </button>
+          
+          {/* Button to upload image from device */}
+          <input
+            type="file"
+            accept="image/*"
+            id="upload-image"
+            style={{ display: 'none' }}
+            onChange={handleImageUpload}
           />
+          <label htmlFor="upload-image" className="image-button">
+            Upload from Device
+          </label>
         </div>
-        <div>
-          <label>Ingredients</label>
-          <textarea 
-            value={ingredients} 
-            onChange={(e) => setIngredients(e.target.value)} 
-            placeholder="List your ingredients here" 
-            required 
-          />
-        </div>
-        <div>
-          <label>Instructions</label>
-          <textarea 
-            value={instructions} 
-            onChange={(e) => setInstructions(e.target.value)} 
-            placeholder="Describe how to prepare the recipe" 
-            required 
-          />
-        </div>
-        <button type="submit">Create Recipe</button>
-      </form>
+      </div>
     </div>
   );
 }
 
 export default CreatePage;
+
