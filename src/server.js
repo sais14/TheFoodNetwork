@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // Middleware
-app.use(cors());  // Enable CORS to allow communication from React frontend
+app.use(cors({origin: 'http://localhost:3000' }));  // Enable CORS to allow communication from React frontend
 app.use(bodyParser.json());  // Parse incoming JSON requests
 
 // Connect to MongoDB
@@ -21,26 +21,43 @@ mongoose.connect('mongodb+srv://thefoodnetwork:intelsucks123@foodnetwork.pbc7n.m
   console.error('MongoDB connection error:', err);
 });
 
-// Define User Schema and Model
+// Define the user schema
 const userSchema = new mongoose.Schema({
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  cuisine: { type: [String], required: true, default: [] },    
+  allergies: { type: [String], required: true, default: [] },
+  diet: { type: [String], required: true, default: [] }  
 });
 
-const User = mongoose.model('User', userSchema);
+// Create a Mongoose model for the `userprofile` collection
+const UserProfile = mongoose.model('user', userSchema);
+
+app.post('/preferences', async (req, res) => {
+  const { cuisine, allergies, diet } = req.body;
+  // Update user preferences in MongoDB
+  const newUser = new UserProfile({
+    cuisine, 
+    allergies, 
+    diet
+  });
+
+  await newUser.save();
+
+  res.status(201).json({ message: 'Preferences saved successfully' });
+});
+
 
 // Route for user sign-up
 app.post('/signup', async (req, res) => {
   const { email, password } = req.body;
 
   // Check if the user already exists
-  const existingUser = await User.findOne({ email });
-  if (existingUser) {
-    return res.status(400).json({ error: 'User already exists' });
-  }
+  // const existingUser = await User.findOne({ email });
+  // if (existingUser) {
+  //   return res.status(400).json({ error: 'User already exists' });
+  // }
 
   // Create a new user
-  const newUser = new User({
+  const newUser = new UserProfile({
     email,
     password  // Store password directly as plain text
   });

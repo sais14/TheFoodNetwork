@@ -7,6 +7,7 @@ import SignUpPage from './Components/SignupPage';
 import PreferencesPage from './Components/PreferencesPage';
 import ExplorePage from './Components/ExplorePage';
 import CreatePage from './Components/CreatePage';
+import SharePage from './Components/SharePage';
 import ReccomendationsPage from './Components/Reccomendations';
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
     <Auth0Provider
       domain={domain}
       clientId={clientId}
-      authorizationParams={{ redirect_uri: window.location.origin}}
+      authorizationParams={{ redirect_uri: `${window.location.origin}/preferences`}}
     >
       <Router>
         <div>
@@ -28,6 +29,7 @@ function App() {
             <Route path="/explore" element={<ExplorePage />} />
             <Route path="/create" element={<CreatePage />} />
             <Route path="/reccomendations" element={<ReccomendationsPage />} />
+            <Route path="/share" element={<SharePage/>} />
             <Route path="/" element={<HomePage />} />
           </Routes>
         </div>

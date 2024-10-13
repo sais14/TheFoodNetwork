@@ -104,9 +104,11 @@ function CreatePage() {
             </div>
           )}
           {showGenerateButton && !isGenerating && (
-            <button onClick={handleGenerateRecipe} className="image-button">
-              Generate Recipe
-            </button>
+            <div className="generate-button-container">
+              <button onClick={handleGenerateRecipe} className="image-button">
+                Generate Recipe
+              </button>
+            </div>
           )}
           {isGenerating && <p>Generating recipe, please wait...</p>}
           {recipe && (
