@@ -1,0 +1,93 @@
+/* Preferences.css */
+
+.preferences-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+  font-family: 'Arial', sans-serif;
+}
+
+.preferences-page h2 {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.preferences-page form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px;
+  background-color: white;
+  border-radius: 25px;
+  width: 320px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.icon-container:hover {
+  background-color: #f3e5f5;
+}
+
+.icon-container label {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px; /* Adds space between the label and the icon */
+  text-align: center; /* Center the text */
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Circle size */
+  height: 50px; /* Circle size */
+  border-radius: 50%; /* Perfect circle */
+  background-color: #d1c4e9; /* Icon background color */
+  margin-bottom: 10px; /* Adds space between icon and dropdown */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.icon-wrapper img {
+  width: 30px; /* Larger icon */
+  height: 30px;
+}
+
+.select-wrapper {
+  width: 100%;
+}
+
+.preferences-page button {
+  background-color: #7b1fa2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 180px;
+}
+
+.preferences-page button:hover {
+  background-color: #6a0080;
+}
+
+@media (max-width: 768px) {
+  .icon-container {
+    width: 100%;
+  }
+}

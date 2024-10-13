@@ -1,35 +1,77 @@
-// PreferencesPage.js
 import React, { useState } from 'react';
+import Select from 'react-select';
+import './Preferences.css'; // Import the CSS file
+import cuisineIcon from './cuisine.jpg';
+import dietIcon from './dietary.webp'
+import allergyIcon from './allergy.png';
 
 function PreferencesPage() {
-  const [diet, setDiet] = useState('omnivore');
-  const [allergies, setAllergies] = useState('');
+  const [diet, setDiet] = useState([]);
+  const [allergies, setAllergies] = useState([]);
+  const [cuisines, setCuisines] = useState([]);
+
+  const allergens = ['Peanuts', 'Shellfish', 'Eggs', 'Milk', 'Mustard'];
+  const diets = ['Vegetarian', 'Vegan', 'Pescatarian', 'No Pork', 'No Beef'];
+  const cuisineOptions = ['Italian', 'Chinese', 'Mexican', 'Indian', 'Thai', 'Japanese', 'French', 'Greek', 'Spanish', 'American'];
 
   const handlePreferencesSave = (e) => {
     e.preventDefault();
-    // Save preferences logic here
-    console.log('Saved preferences:', diet, allergies);
+    console.log('Saved preferences:', diet, allergies, cuisines);
+  };
+
+  const handleAllergiesChange = (selectedOptions) => {
+    setAllergies(selectedOptions ? selectedOptions.map(option => option.value) : []);
+  };
+
+  const handleDietChange = (selectedOptions) => {
+    setDiet(selectedOptions ? selectedOptions.map(option => option.value) : []);
+  };
+
+  const handleCuisinesChange = (selectedOptions) => {
+    setCuisines(selectedOptions ? selectedOptions.map(option => option.value) : []);
   };
 
   return (
     <div className="preferences-page">
       <h2>Set Your Preferences</h2>
       <form onSubmit={handlePreferencesSave}>
-        <div>
-          <label>Diet</label>
-          <select value={diet} onChange={(e) => setDiet(e.target.value)}>
-            <option value="omnivore">Omnivore</option>
-            <option value="vegetarian">Vegetarian</option>
-            <option value="vegan">Vegan</option>
-          </select>
+        <div className="icon-container">
+          <div className="icon-wrapper">
+            <img src={cuisineIcon} alt="Cuisine Icon" />
+          </div>
+          <label>Cuisine</label>
+          <Select
+            isMulti
+            options={cuisineOptions.map(cuisine => ({ value: cuisine, label: cuisine }))}
+            onChange={handleCuisinesChange}
+            value={cuisineOptions.filter(cuisine => cuisines.includes(cuisine)).map(cuisine => ({ value: cuisine, label: cuisine }))}
+            className="select-wrapper"
+          />
         </div>
-        <div>
+        <div className="icon-container">
+          <div className="icon-wrapper">
+            <img src={dietIcon} alt="Diet Icon" />
+          </div>
+          <label>Dietary Restrictions</label>
+          <Select
+            isMulti
+            options={diets.map(diet => ({ value: diet, label: diet }))}
+            onChange={handleDietChange}
+            value={diets.filter(d => diet.includes(d)).map(d => ({ value: d, label: d }))}
+            className="select-wrapper"
+          />
+        </div>
+        <div className="icon-container">
+          <div className="icon-wrapper">
+            <img src={allergyIcon} alt="Allergies Icon" />
+          </div>
           <label>Allergies</label>
-          <input 
-            type="text" 
-            value={allergies} 
-            onChange={(e) => setAllergies(e.target.value)} 
-            placeholder="E.g. nuts, gluten" 
+          <Select
+            isMulti
+            options={allergens.map(allergen => ({ value: allergen, label: allergen }))}
+            onChange={handleAllergiesChange}
+            value={allergens.filter(allergen => allergies.includes(allergen)).map(allergen => ({ value: allergen, label: allergen }))}
+            className="select-wrapper"
           />
         </div>
         <button type="submit">Save Preferences</button>
