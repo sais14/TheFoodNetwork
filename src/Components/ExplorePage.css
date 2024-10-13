@@ -1,39 +1,32 @@
-/* CSS for ExplorePage */
-
-/* Ensure the title is centered and has space below it */
-.explore-title {
-  text-align: center;
-  margin-bottom: 20px; /* Space between title and images */
-}
-
-/* Ensure the images appear in a grid layout */
+/* Grid layout for the image gallery */
 .image-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between the tiles */
+  justify-items: center;
 }
 
 /* Image tile styling */
 .image-tile {
   position: relative;
-  width: 250px;
-  margin-bottom: 20px;
+  width: 100%;
   transition: transform 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .image-tile:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .image-tile img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Sparkle emoji positioning */
 /* Sparkle emoji positioning with a white circle around it */
 .image-sparkle {
   position: absolute;
@@ -41,15 +34,15 @@
   right: 10px;
   font-size: 24px;
   cursor: pointer;
-  background-color: white; /* White background for the circle */
-  border-radius: 50%; /* Makes the container a circle */
-  padding: 5px; /* Padding to make the circle larger than the emoji */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional shadow for a 3D effect */
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease; /* Smooth hover effect */
 }
-
 
 /* Image name styling */
 .image-name {
@@ -57,14 +50,53 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
   color: white;
+  font-size: 1rem;
   text-align: center;
   padding: 10px;
   opacity: 0;
   transition: opacity 0.3s ease;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .image-tile:hover .image-name {
+  opacity: 1;
+}
+
+/* Tetris-style grid layout with varying image sizes */
+.image-tile.wide {
+  grid-column: span 2; /* Takes up two columns */
+  grid-row: span 1;
+}
+
+.image-tile.tall {
+  grid-column: span 1;
+  grid-row: span 2; /* Takes up two rows */
+}
+
+.image-tile.large {
+  grid-column: span 2;
+  grid-row: span 2; /* Takes up two columns and two rows */
+}
+
+.image-sparkle .create-text {
+  position: absolute;
+  top: 50%;
+  left: -80px; /* Position it to the left of the sparkle */
+  transform: translateY(-50%); /* Center it vertically */
+  background-color: rgba(0, 0, 0, 0.6); /* Translucent white background */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Fade in effect */
+  pointer-events: none; /* Ensure it doesn't interfere with clicking the sparkle */
+}
+
+.image-sparkle:hover .create-text {
   opacity: 1;
 }

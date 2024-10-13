@@ -1,15 +1,168 @@
+/* Main layout for the Recommendations page */
 .carousel-page {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   text-align: center;
+  padding: 40px 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  font-family: 'Poppins', sans-serif;
 }
 
-.carousel-page h2 {
-  margin: 20px 0;
+/* Main hero title */
+.carousel-page h1 {
+  font-size: 3.5rem;
+  color: #333;
+  margin-bottom: 50px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-.carousel-page img {
-  width: 100%;
+/* Carousel sections */
+.carousel-section {
+  margin-bottom: 40px;
+}
+
+
+.carousel-section h2 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  color: #444;
+  font-weight: 600;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #6f42c1;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Styling for each carousel item */
+.carousel-item {
+  padding: 10px;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 85%; /* Smaller images */
   height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+  opacity: 0.4;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  color: #000;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+/* Styling dots navigation */
+.slick-dots li button:before {
+  color: #6f42c1;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #444;
+}
+
+/* Larger arrows navigation style */
+.slick-prev:before, .slick-next:before {
+  color: #6f42c1; /* Purple arrow color */
+  font-size: 40px; /* Increase the arrow size */
+}
+
+/* Positioning and hovering on arrows */
+.slick-prev, .slick-next {
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.6); /* Add background to the arrows */
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.slick-prev:hover, .slick-next:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Slightly darker on hover */
+}
+
+.slick-prev {
+  left: -60px; /* Offset from the left */
+}
+
+.slick-next {
+  right: -60px; /* Offset from the right */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .carousel-page h1 {
+    font-size: 2.8rem;
+  }
+
+  .carousel-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .image-container img {
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-page h1 {
+    font-size: 2.2rem;
+  }
+
+  .carousel-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .image-container img {
+    width: 100%;
+  }
+
+  .image-overlay {
+    font-size: 1.1rem;
+  }
+
+  .slick-prev, .slick-next {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+  }
+
+  .slick-prev {
+    left: -45px;
+  }
+
+  .slick-next {
+    right: -45px;
+  }
 }

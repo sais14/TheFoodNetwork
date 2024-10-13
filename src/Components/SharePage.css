@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #d9afd9 0%, #cce3e6 100%);
+  background: linear-gradient(135deg, #d9c0d9 0%, #cce3e6 100%);
   height: 100vh;
   overflow-y: scroll;
 }
