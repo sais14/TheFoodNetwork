@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-import './Preferences.css'; // Import the CSS file
+import './style.css'; // Import the CSS file
 import cuisineIcon from './cuisine.jpg';
 import dietIcon from './dietary.webp'
 import allergyIcon from './allergy.png';
