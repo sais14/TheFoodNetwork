@@ -5,7 +5,7 @@
 
 In the project directory, you can run:
 
-run npm start & node server.js from the main directory, and uvicorn main:app --reload within /backend to run the application
+npm start & node server.js from the main directory, and uvicorn main:app --reload within /backend to run the application
 
 ## Inspiration
 We are hoping to answer the age-old question: "What should we eat?" It's a question that often leaves people feeling stuck, and we wanted to create an app that makes meal planning simple, personalized, and a way to connect to their community.
