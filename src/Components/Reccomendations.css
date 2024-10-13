@@ -1,0 +1,15 @@
+.carousel-page {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carousel-page h2 {
+  margin: 20px 0;
+}
+
+.carousel-page img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
