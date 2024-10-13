@@ -6,14 +6,38 @@ function SignUpPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
+    
     if (password !== confirmPassword) {
       console.log('Passwords do not match');
       return;
     }
-    console.log('Sign up with', email, password);
+  
+    try {
+      const response = await fetch('http://localhost:3000/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email,
+          password
+        })
+      });
+  
+      const data = await response.json();
+  
+      if (response.status === 201) {
+        console.log('Sign-up successful', data.message);
+      } else {
+        console.log('Error:', data.error);
+      }
+    } catch (error) {
+      console.error('Error during sign-up:', error);
+    }
   };
+  
 
   return (
     <div className="signup-page">
