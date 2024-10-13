@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# The Food Network
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+run npm start & node server.js from the main directory, and uvicorn main:app --reload within /backend to run the application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Inspiration
+We are hoping to answer the age-old question: "What should we eat?" It's a question that often leaves people feeling stuck, and we wanted to create an app that makes meal planning simple, personalized, and a way to connect to their community.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## What it does
+The Food Network allows users to upload a picture of their kitchen or pantry. Using GPT-powered image recognition, the app identifies available ingredients and suggests personalized recipes with fun cultural facts based on user preferences, dietary restrictions, and allergies. It also recommends meals that other users with similar preferences are cooking, fostering a sense of community by helping people discover popular dishes, try new cultural cuisines, and connect through shared tastes. We wanted to create a groundbreaking application that not only enhances meal planning but also connects users with diverse culinary cultures.
 
-### `npm test`
+To make decision-making easier, the app uses Stable Diffusion to visualize the recipe suggestions. This visualization is particularly important because, while you often hear the names of different cuisines, it can be hard to know what the dishes actually look like or what to expect. By showing users a visual preview of the recipes, the app helps them feel more confident in their choices and introduces them to new cuisines in a more engaging way, by transforming recipe information into a more usable and accessible format for users.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+We believe that through shared culinary experiences, we can build a more connected, culturally aware community!
 
-### `npm run build`
+## How we built it
+We built The Food Network with a React frontend for a smooth, interactive user experience. We chose MongoDB to handle data storage, ensuring scalability and speed for user preferences and recipe suggestions.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The image recognition is powered by GPT, and we used Perplexity API calls to create personalized recipe recommendations based on ingredients in users' fridges, helping users explore dishes from various cultures and discover meals they might not otherwise have considered.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Utilizing Perplexity allowed us to make it easy to generate culturally rich and actionable recipe ideas, revolutionizing decision-making in the kitchen. We also used Stable Diffusion to generate recipe visuals and incorporated a recommendation system using an autoencoder neural network paired with k-nearest neighbors.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We also utilize Auth0 for login user authentication due to its scalability, as we are a social platform so we want to be sure we can support many users securely.
 
-### `npm run eject`
+## Challenges we ran into
+One of the major challenges we faced was training Stable Diffusion locally, which took a significant amount of time and extended the testing and iteration process. This experience taught us the importance of leveraging cloud-based infrastructure for greater scalability and efficiency, enabling faster development and smoother model training.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Accomplishments that we're proud of
+We are particularly proud of our recommendation system! Our goal was to make food an avenue for users to explore and connect with different cultures, and we achieved this by not only personalizing recipes for each user but also recommending meals that others with similar tastes and preferences have enjoyed. By combining an autoencoder neural network with k-nearest neighbors for vector dimensionality reduction, we were able to create a system that suggests recipes based on shared interests between users. This allows users to discover new cuisines and cultural dishes that they might not have otherwise considered!
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## What we learned
+We learned the importance of planning and prototyping early because we ran into a few challenges with our initial idea and had to pivot.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+On the technical side, we gained hands-on experience with Perplexity API calls for personalized recipe suggestions and deepened our understanding of training AI models for the stable diffusion.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## What's next for The Food Network
+Looking ahead, we plan to expand the social aspects of the platform by introducing a follower/influencer model. This would allow users to follow others for meal inspiration and share their cooking experiences, further building a community around food and recipes. We also hope to add more preference features, such as level of cooking skill, etc.
