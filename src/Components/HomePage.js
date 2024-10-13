@@ -5,7 +5,7 @@ import './HomePage.css';
 function HomePage() {
   return (
     <div className="home-page">
-      <h1>Hungry?</h1>
+      <h1 className = "titleh1">Hungry?</h1>
       <p>Welcome to the The Food Network</p>
       <div className="button-container">
         <Link to="/explore" className="home-button">Explore</Link>

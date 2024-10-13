@@ -13,11 +13,11 @@
 }
 
 h1 {
-  font-size: 30rem; /* Increased to make the heading more prominent */
+  font-size: 3.5rem; /* Increased to make the heading more prominent */
   color: #ffffff  !important; /* White text for better contrast */
-  margin-bottom: 1rem;
-  user-select: text;
-  text-shadow: 2px 2px 8px rgba(240, 158, 158, 0.995); /* Maintained text shadow for legibility */
+  margin-bottom: 1rem ;
+  user-select: text ;
+  text-shadow: 2px 2px 8px rgba(240, 158, 158, 0.995) ; /* Maintained text shadow for legibility */
 }
 
 p {
