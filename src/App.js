@@ -7,6 +7,7 @@ import SignUpPage from './Components/SignupPage';
 import PreferencesPage from './Components/PreferencesPage';
 import ExplorePage from './Components/ExplorePage';
 import CreatePage from './Components/CreatePage';
+import ReccomendationsPage from './Components/Reccomendations';
 
 function App() {
   const domain = "dev-hb5qwoe81p5lw45x.us.auth0.com";
@@ -26,6 +27,7 @@ function App() {
             <Route path="/preferences" element={<PreferencesPage />} />
             <Route path="/explore" element={<ExplorePage />} />
             <Route path="/create" element={<CreatePage />} />
+            <Route path="/reccomendations" element={<ReccomendationsPage />} />
             <Route path="/" element={<HomePage />} />
           </Routes>
         </div>
