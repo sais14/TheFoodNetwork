@@ -2,16 +2,27 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './ExplorePage.css'; // Custom CSS for the image grid
 
+import AlfredoPasta from '../images/ExploreImages/AlfredoPasta.jpg';
+import FriedRice from '../images/ExploreImages/friedrice.jpg';
+import Guacamole from '../images/ExploreImages/Guacamole.jpg';
+import Gyoza from '../images/ExploreImages/gyoza.jpg';
+import Kimchi from '../images/ExploreImages/kimchi.jpg';
+import PaniPuri from '../images/ExploreImages/Pani_Puri.png';
+import Pav from '../images/ExploreImages/pav.jpg';
+import PhadThai from '../images/ExploreImages/phadthai.jpeg';
+import Tzatziki from '../images/ExploreImages/Tzatziki.webp';
+
+
 const images = [
-  { src: 'https://via.placeholder.com/300?text=Image+1', name: 'Pizza' },
-  { src: 'https://via.placeholder.com/300?text=Image+2', name: 'Pav Baji' },
-  { src: 'https://via.placeholder.com/300?text=Image+3', name: 'Sushi' },
-  { src: 'https://via.placeholder.com/300?text=Image+4', name: 'Other Food' },
-  { src: 'https://via.placeholder.com/300?text=Image+5', name: 'Image 5' },
-  { src: 'https://via.placeholder.com/300?text=Image+6', name: 'Image 6' },
-  { src: 'https://via.placeholder.com/300?text=Image+7', name: 'Image 7' },
-  { src: 'https://via.placeholder.com/300?text=Image+8', name: 'Image 8' },
-  { src: 'https://via.placeholder.com/300?text=Image+9', name: 'Image 9' },
+  { src: AlfredoPasta, name: 'Alfredo Pasta' },
+  { src: Pav, name: 'Pav Bhaji' },
+  { src: Guacamole, name: 'Guacamole' },
+  { src: Gyoza, name: 'Gyoza' },
+  { src: Kimchi, name: 'Kimchi' },
+  { src: FriedRice, name: 'Fried Rice' },
+  { src: PaniPuri, name: 'Pani Puri' },
+  { src: PhadThai, name: 'Phad Thai' },
+  { src: Tzatziki, name: 'Tzatziki' }
 ];
 
 const ExplorePage = () => {
