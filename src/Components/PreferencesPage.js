@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-import './style.css'; // Import the CSS file
+import './style.css'; 
 import cuisineIcon from './cuisine.jpg';
-import dietIcon from './dietary.webp'
+import dietIcon from './dietary.webp';
 import allergyIcon from './allergy.png';
+import BackHomeLink from './BackHomeLink'; 
 
 function PreferencesPage() {
   const [diet, setDiet] = useState([]);
@@ -33,6 +34,7 @@ function PreferencesPage() {
 
   return (
     <div className="preferences-page">
+      <BackHomeLink /> 
       <h2>Set Your Preferences</h2>
       <form onSubmit={handlePreferencesSave}>
         <div className="icon-container">

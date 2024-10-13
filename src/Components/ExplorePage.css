@@ -1,0 +1,20 @@
+/* ExplorePage.css */
+.explore-page {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .explore-page h2 {
+    margin: 20px 0;
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .explore-page p {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+  

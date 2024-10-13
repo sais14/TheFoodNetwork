@@ -1,12 +1,50 @@
-/* Container for buttons */
+/* CreatePage.css */
+.create-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  padding: 40px;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.content {
+  width: 100%; 
+  max-width: 800px; 
+  margin-left: 20px;
+}
+
+.create-page h2 {
+  margin: 10px 0;
+  font-size: 2.5rem;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  text-align: left; 
+}
+
+.kitchen-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #444;
+  text-align: left; 
+}
+
+.kitchen-section p {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 10px 0;
+  line-height: 1.5;
+  text-align: left;
+}
+
 .image-buttons {
   display: flex;
-  justify-content: center;
-  gap: 20px; /* Spacing between buttons */
+  justify-content: flex-start; 
+  gap: 15px;
   margin-top: 20px;
 }
 
-/* Styling for both buttons */
 .image-button {
   background-color: #007bff;
   color: white;
@@ -16,20 +54,27 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
-  text-align: center;
-  display: flex; /* Ensure the text is centered */
-  align-items: center; /* Vertically center text */
-  justify-content: center; /* Horizontally center text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Hover effect for lighter background color */
 .image-button:hover {
   background-color: #80bdff;
-  color: black; /* Optionally, change the text color on hover */
+  color: black;
 }
 
-/* Ensuring the label looks like a button */
 label.image-button {
   display: inline-block;
   cursor: pointer;
+}
+
+ul {
+  padding-left: 20px; 
+  text-align: left;
+}
+
+pre {
+  text-align: left;
+  white-space: pre-wrap; 
 }

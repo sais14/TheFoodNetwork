@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './CreatePage.css';
+import './CreatePage.css'; // Import the new styles
+import BackHomeLink from './BackHomeLink';
 
 function CreatePage() {
   const [uploadMessage, setUploadMessage] = useState('');
@@ -26,7 +27,7 @@ function CreatePage() {
           const data = await response.json();
           setIngredients(data.ingredients);
           setUploadMessage('Ingredients extracted successfully!');
-          setShowGenerateButton(true); 
+          setShowGenerateButton(true);
         } else {
           setUploadMessage('Failed to extract ingredients.');
         }
@@ -72,51 +73,49 @@ function CreatePage() {
 
   return (
     <div className="create-page">
-      <h2>Create a New Recipe</h2>
-
-      <div className="kitchen-section">
-        <h3>What's in your kitchen?</h3>
-        <p>Upload a picture of your kitchen or a receipt to help generate recipes based on your ingredients.</p>
-
-        <div className="image-buttons">
-          <input
-            type="file"
-            accept="image/*"
-            id="upload-image"
-            style={{ display: 'none' }}
-            onChange={handleImageUpload}
-          />
-          <label htmlFor="upload-image" className="image-button">
-            Upload from Device
-          </label>
+      <BackHomeLink />
+      <div className="content">
+        <h2>Create a New Recipe</h2>
+        <div className="kitchen-section">
+          <h3>What's in your kitchen?</h3>
+          <p>Upload a picture of your kitchen or a receipt to help generate recipes based on your ingredients.</p>
+          <div className="image-buttons">
+            <input
+              type="file"
+              accept="image/*"
+              id="upload-image"
+              style={{ display: 'none' }}
+              onChange={handleImageUpload}
+            />
+            <label htmlFor="upload-image" className="image-button">
+              Upload from Device
+            </label>
+          </div>
+          {isUploading && <p>Uploading and extracting ingredients...</p>}
+          {uploadMessage && <p>{uploadMessage}</p>}
+          {ingredients.length > 0 && (
+            <div>
+              <h3>Extracted Ingredients:</h3>
+              <ul>
+                {ingredients.map((ingredient, index) => (
+                  <li key={index}>{ingredient}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          {showGenerateButton && !isGenerating && (
+            <button onClick={handleGenerateRecipe} className="image-button">
+              Generate Recipe
+            </button>
+          )}
+          {isGenerating && <p>Generating recipe, please wait...</p>}
+          {recipe && (
+            <div>
+              <h3>Generated Recipe:</h3>
+              <pre>{recipe}</pre>
+            </div>
+          )}
         </div>
-
-        {isUploading && <p>Uploading and extracting ingredients...</p>}
-        {uploadMessage && <p>{uploadMessage}</p>}
-
-        {ingredients.length > 0 && (
-          <div>
-            <h3>Extracted Ingredients:</h3>
-            <ul>
-              {ingredients.map((ingredient, index) => (
-                <li key={index}>{ingredient}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-
-        {showGenerateButton && !isGenerating && (
-          <button onClick={handleGenerateRecipe}>Generate Recipe</button>
-        )}
-
-        {isGenerating && <p>Generating recipe, please wait...</p>}
-
-        {recipe && (
-          <div>
-            <h3>Generated Recipe:</h3>
-            <pre>{recipe}</pre>
-          </div>
-        )}
       </div>
     </div>
   );
