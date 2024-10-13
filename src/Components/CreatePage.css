@@ -1,0 +1,35 @@
+/* Container for buttons */
+.image-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Spacing between buttons */
+  margin-top: 20px;
+}
+
+/* Styling for both buttons */
+.image-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: center;
+  display: flex; /* Ensure the text is centered */
+  align-items: center; /* Vertically center text */
+  justify-content: center; /* Horizontally center text */
+}
+
+/* Hover effect for lighter background color */
+.image-button:hover {
+  background-color: #80bdff;
+  color: black; /* Optionally, change the text color on hover */
+}
+
+/* Ensuring the label looks like a button */
+label.image-button {
+  display: inline-block;
+  cursor: pointer;
+}
