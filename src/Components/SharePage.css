@@ -1,0 +1,186 @@
+/* General page styling with light purple gradient background */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #d9afd9 0%, #cce3e6 100%);
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.share-container {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #333;
+  top: 0;
+  background-color: transparent;
+  padding: 10px;
+  z-index: 1000;
+}
+
+p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.rounded-button {
+  background-color: #584fb6;
+  color: white;
+  padding: 15px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.rounded-button:hover {
+  background-color: #817cba;
+  transform: translateY(-3px);
+}
+
+/* Limit the size of the image to prevent it from taking too much space */
+.image-preview {
+  margin: 20px 0;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+.ingredients-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-label {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  color: #555;
+  text-align: left;
+  width: 80%;
+}
+
+.name-input,
+.ingredient-input {
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.submit-ingredients-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-ingredients-button:hover {
+  background-color: #0056b3;
+}
+
+/* Recent posts section */
+.recent-posts {
+  margin-top: 40px;
+}
+
+.recent-posts h2 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.recent-posts ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-post-item {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.post-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recent-post-image {
+  width: 60%; /* Reduce the image size */
+  margin: 10px auto; /* Center the image horizontally */
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-content h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center; /* Center the title */
+}
+
+.post-content p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .share-container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  .recent-posts h2 {
+    font-size: 1.5em;
+  }
+
+  .rounded-button {
+    font-size: 14px;
+    padding: 12px 20px;
+  }
+
+  .recent-post-image {
+    width: 80%; /* Increase image size slightly on smaller screens */
+  }
+}
